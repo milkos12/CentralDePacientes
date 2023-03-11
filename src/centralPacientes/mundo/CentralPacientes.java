@@ -70,7 +70,10 @@ public class CentralPacientes {
      *            pac!=null y no existe un paciente con código igual a pac.codigo
      */
     public void agregarPacienteAlComienzo(Paciente pac) {
+        //Salomé
         // TODO: Realiar el método que agrega al principio
+        pacientes.add(0,pac);
+
     }
 
     /**
@@ -80,13 +83,16 @@ public class CentralPacientes {
      *            pac!=null y no existe un paciente con código igual a pac.codigo
      */
     public void agregarPacienteAlFinal(Paciente pac) {
+        //Valentina
         // TODO: Agragar un paciente al final de la lista
+
     }
 
     /**
      * Adiciona un paciente a la lista de pacientes antes del paciente con el código especificado. <br>
      */
     public void agregarPacienteAntesDe(int cod, Paciente pac) throws NoExisteException {
+        // Daniel
         // TODO: Agrega un paciente después del paciente con el código dado
     }
 
@@ -94,7 +100,15 @@ public class CentralPacientes {
      * Adiciona un paciente a la lista de pacientes después del paciente con el código especificado.
      */
     public void agregarPacienteDespuesDe(int cod, Paciente pac) throws NoExisteException {
+        //Miller
         // TODO: Agrega un paciente después del paciente con el código cod
+        for (int i = 0; i < pacientes.size(); i++) {
+            System.out.println(pac.darCodigo()+"--"+pacientes.get(i).darCodigo());
+            if (cod == pacientes.get(i).darCodigo()) {
+                pacientes.add(i+1,pac);
+            }
+        }
+
     }
 
     /**
@@ -108,6 +122,7 @@ public class CentralPacientes {
      * Elimina el paciente con el código especificado.
      */
     public void eliminarPaciente(int cod) throws NoExisteException {
+        // Daniel
         // TODO: Si no existe el paciente con el código dado, genera la excepción
     }
 
