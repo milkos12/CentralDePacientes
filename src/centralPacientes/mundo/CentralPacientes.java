@@ -131,11 +131,8 @@ public class CentralPacientes {
         // Daniel
         // TODO: Si no existe el paciente con el c�digo dado, genera la excepci�n
          Paciente paciente = localizar(cod);
-           if (paciente != null) {
-            throw new NoExisteException("");
-            } else {
             pacientes.remove(paciente);
-           }
+           
     }
 
     /**
