@@ -44,7 +44,7 @@ public class CentralPacientes {
         listaClinicas = new ArrayList<>();
         listaClinicas.add("Clinica del Country");
         listaClinicas.add("Clinica Palermo");
-        listaClinicas.add("Clinica Reina Sof�a");
+        listaClinicas.add("Clinica Reina Sofia");
         listaClinicas.add("Clinica El Bosque");
         listaClinicas.add("Clinica San Ignacio");
         listaClinicas.add("Otra");
