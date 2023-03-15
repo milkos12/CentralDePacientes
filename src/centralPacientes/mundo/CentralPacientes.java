@@ -75,8 +75,6 @@ public class CentralPacientes {
          if (localizar(pac.darCodigo()) == null) {
             pacientes.add(0, pac);
         }
-        pacientes.add(0,pac);
-
     }
 
     /**
@@ -87,13 +85,11 @@ public class CentralPacientes {
      */
     public void agregarPacienteAlFinal(Paciente pac) {
         //Valentina
+        // TODO: Agragar un paciente al final de la lista
         if (pac != null && localizar(pac.darCodigo()) == null) { // Verifica que el paciente sea válido y no exista en la lista
             pacientes.add(pac); // Agrega el paciente al final de la lista
         }
-        // TODO: Agragar un paciente al final de la lista
-
     }
-
     /**
      * Adiciona un paciente a la lista de pacientes antes del paciente con el c�digo especificado. <br>
      */
@@ -108,7 +104,6 @@ public class CentralPacientes {
             }
         }
     }
-
     /**
      * Adiciona un paciente a la lista de pacientes despu�s del paciente con el c�digo especificado.
      */
@@ -123,22 +118,24 @@ public class CentralPacientes {
         }
 
     }
-
     /**
      * Busca el paciente con el c�digo dado en la lista de pacientes.
      */
     public Paciente localizar(int codigo) {
         return null;
     }
-
     /**
      * Elimina el paciente con el c�digo especificado.
      */
     public void eliminarPaciente(int cod) throws NoExisteException {
         // Daniel
         // TODO: Si no existe el paciente con el c�digo dado, genera la excepci�n
-        Paciente paciente = localizar(cod);
-        pacientes.remove(paciente);
+         Paciente paciente = localizar(cod);
+           if (paciente != null) {
+            throw new NoExisteException("");
+            } else {
+            pacientes.remove(paciente);
+           }
     }
 
     /**
