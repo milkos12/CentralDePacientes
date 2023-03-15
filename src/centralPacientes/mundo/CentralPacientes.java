@@ -1,7 +1,7 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Universidad Ean (Bogotá - Colombia)
- * Departamento de Tecnologías de la Información y Comunicaciones
+ * Universidad Ean (Bogotï¿½ - Colombia)
+ * Departamento de Tecnologï¿½as de la Informaciï¿½n y Comunicaciones
  * Licenciado bajo el esquema Academic Free License version 2.1
  * <p>
  * Proyecto Central de Pacientes.
@@ -27,7 +27,7 @@ public class CentralPacientes {
     private ArrayList<Paciente> pacientes;
 
     /**
-     * Vector de clínicas manejadas por la central
+     * Vector de clï¿½nicas manejadas por la central
      */
     private ArrayList<String> listaClinicas;
 
@@ -36,28 +36,28 @@ public class CentralPacientes {
     // -----------------------------------------------------------------
 
     /**
-     * Crea una nueva central sin pacientes y con una lista predefinida de clínicas
+     * Crea una nueva central sin pacientes y con una lista predefinida de clï¿½nicas
      */
     public CentralPacientes() {
         pacientes = new ArrayList<>();
 
         listaClinicas = new ArrayList<>();
-        listaClinicas.add("Clínica del Country");
-        listaClinicas.add("Clínica Palermo");
-        listaClinicas.add("Clínica Reina Sofía");
-        listaClinicas.add("Clínica El Bosque");
-        listaClinicas.add("Clínica San Ignacio");
+        listaClinicas.add("Clinica del Country");
+        listaClinicas.add("Clinica Palermo");
+        listaClinicas.add("Clinica Reina Sofï¿½a");
+        listaClinicas.add("Clinica El Bosque");
+        listaClinicas.add("Clinica San Ignacio");
         listaClinicas.add("Otra");
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
-     * Retorna el número de pacientes de la clínica
+     * Retorna el nï¿½mero de pacientes de la clï¿½nica
      *
-     * @return El número de pacientes de la clínica
+     * @return El nï¿½mero de pacientes de la clï¿½nica
      */
     public int darNumeroPacientes() {
         return pacientes.size();
@@ -67,41 +67,54 @@ public class CentralPacientes {
      * Adiciona un paciente al principio de la lista
      *
      * @param pac El paciente a ser agregado al comienzo de la lista. <br>
-     *            pac!=null y no existe un paciente con código igual a pac.codigo
+     *            pac!=null y no existe un paciente con cï¿½digo igual a pac.codigo
      */
     public void agregarPacienteAlComienzo(Paciente pac) {
-        //Salomé
-        // TODO: Realiar el método que agrega al principio
+        //Salomï¿½
+        // TODO: Realiar el mï¿½todo que agrega al principio
+         if (localizar(pac.darCodigo()) == null) {
+            pacientes.add(0, pac);
+        }
         pacientes.add(0,pac);
 
     }
 
     /**
-     * Adiciona un paciente al final de la lista. Si la lista está vacía el paciente queda de primero
+     * Adiciona un paciente al final de la lista. Si la lista estï¿½ vacï¿½a el paciente queda de primero
      *
      * @param pac El paciente a ser agregado al final la lista. <br>
-     *            pac!=null y no existe un paciente con código igual a pac.codigo
+     *            pac!=null y no existe un paciente con cï¿½digo igual a pac.codigo
      */
     public void agregarPacienteAlFinal(Paciente pac) {
         //Valentina
+        if (pac != null && localizar(pac.darCodigo()) == null) { // Verifica que el paciente sea vÃ¡lido y no exista en la lista
+            pacientes.add(pac); // Agrega el paciente al final de la lista
+        }
         // TODO: Agragar un paciente al final de la lista
 
     }
 
     /**
-     * Adiciona un paciente a la lista de pacientes antes del paciente con el código especificado. <br>
+     * Adiciona un paciente a la lista de pacientes antes del paciente con el cï¿½digo especificado. <br>
      */
     public void agregarPacienteAntesDe(int cod, Paciente pac) throws NoExisteException {
         // Daniel
-        // TODO: Agrega un paciente después del paciente con el código dado
+        // TODO: Agrega un paciente despuï¿½s del paciente con el cï¿½digo dado
+        for (int i = 0; i < pacientes.size(); i++) {
+              System.out.println(pac.darCodigo()+"--"+pacientes.get(i).darCodigo());
+               if (cod == pacientes.get(i).darCodigo()) {
+               pacientes.add(i, pac);
+               break;
+            }
+        }
     }
 
     /**
-     * Adiciona un paciente a la lista de pacientes después del paciente con el código especificado.
+     * Adiciona un paciente a la lista de pacientes despuï¿½s del paciente con el cï¿½digo especificado.
      */
     public void agregarPacienteDespuesDe(int cod, Paciente pac) throws NoExisteException {
         //Miller
-        // TODO: Agrega un paciente después del paciente con el código cod
+        // TODO: Agrega un paciente despuï¿½s del paciente con el cï¿½digo cod
         for (int i = 0; i < pacientes.size(); i++) {
             System.out.println(pac.darCodigo()+"--"+pacientes.get(i).darCodigo());
             if (cod == pacientes.get(i).darCodigo()) {
@@ -112,18 +125,20 @@ public class CentralPacientes {
     }
 
     /**
-     * Busca el paciente con el código dado en la lista de pacientes.
+     * Busca el paciente con el cï¿½digo dado en la lista de pacientes.
      */
     public Paciente localizar(int codigo) {
         return null;
     }
 
     /**
-     * Elimina el paciente con el código especificado.
+     * Elimina el paciente con el cï¿½digo especificado.
      */
     public void eliminarPaciente(int cod) throws NoExisteException {
         // Daniel
-        // TODO: Si no existe el paciente con el código dado, genera la excepción
+        // TODO: Si no existe el paciente con el cï¿½digo dado, genera la excepciï¿½n
+        Paciente paciente = localizar(cod);
+        pacientes.remove(paciente);
     }
 
     /**
@@ -134,7 +149,7 @@ public class CentralPacientes {
     }
 
     /**
-     * Retorna la lista de clínicas manejadas por la central
+     * Retorna la lista de clï¿½nicas manejadas por la central
      */
     public ArrayList<String> darListaClinicas() {
         return listaClinicas;
@@ -148,7 +163,7 @@ public class CentralPacientes {
     }
 
     // -----------------------------------------------------------------
-    // Puntos de Extensión
+    // Puntos de Extensiï¿½n
     // -----------------------------------------------------------------
 
     /**
@@ -166,10 +181,10 @@ public class CentralPacientes {
     }
 
     /**
-     * De las 6 opciones de clínicas que tiene la central
-     * ¿Cuál es el nombre de la más ocupada, la que tiene más pacientes?
+     * De las 6 opciones de clï¿½nicas que tiene la central
+     * ï¿½Cuï¿½l es el nombre de la mï¿½s ocupada, la que tiene mï¿½s pacientes?
      *
-     * @return nombre de la clínica
+     * @return nombre de la clï¿½nica
      */
     public String metodo4() {
         return "Respuesta 4";
